@@ -2,6 +2,7 @@ name: FakeLags
 version: '${version}'
 main: hw.zako.fakelags.FakeLags
 api-version: '1.16'
+folia-supported: true
 
 commands:
   lags:

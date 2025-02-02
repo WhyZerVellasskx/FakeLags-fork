@@ -21,6 +21,9 @@ public final class FakeLags extends JavaPlugin {
     @Getter
     private static Configuration configuration;
 
+    @Getter
+    private static FakeLags instance;
+
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
@@ -28,6 +31,7 @@ public final class FakeLags extends JavaPlugin {
         trollingManager = new TrollingManager();
         packetListener = new PacketListener();
         configuration = new Configuration(this.getConfig());
+        instance = this;
 
         PacketEvents.getAPI().getEventManager().registerListener(packetListener);
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
